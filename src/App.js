@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import ChatGPT from './ChatGPT';
-import SearchBar from './components/searchBar'
+//import ChatGPT from './ChatGT';
+import {SearchBar} from "./components/SearchBar";
 
 function App() {
   return (
-    <div className="App">setMessages
-      <SearchBar/>
-      <main>
-        <ChatGPT />
-      </main>
+    <div className="App">
+    <div className="search-bar-container">
+    <SearchBar/>
+    <div>searchResults</div>
+    </div>
+    
     </div>
   );
 }
