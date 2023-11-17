@@ -7,7 +7,10 @@ export const SearchBar = () => {
 
     const fetchData = (value) => {
         fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json()).then((json) => {
-            console.log(json)
+            const results = json.filter((user)=>{
+                return user && user.name
+            });
+            console.log(results);
         });
     }
 
@@ -19,7 +22,7 @@ export const SearchBar = () => {
     <div className="input-wrapper">
         <FaSearch id="search-icon" />
         <input placeholder="Type to search" value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
         />
     </div>
     );
