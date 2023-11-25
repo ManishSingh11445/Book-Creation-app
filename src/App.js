@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
+import { useState } from 'react';
 //import ChatGPT from './ChatGT';
 import {SearchBar} from "./components/SearchBar";
+import {SearchResultsList} from "./components/SearchResultsList"
 
 function App() {
+  const [results,setResults] = useState([]);
   return (
     <div className="App">
     <div className="search-bar-container">
-    <SearchBar/>
-    <div>searchResults</div>
-    </div>
-    
+      <SearchBar setResults = {setResults}/>
+      <SearchResultsList results ={results} />
+    </div>  
     </div>
   );
 }
